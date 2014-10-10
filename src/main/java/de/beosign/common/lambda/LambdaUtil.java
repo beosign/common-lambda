@@ -29,6 +29,11 @@ public interface LambdaUtil {
     }
 
     /**
+     * <i>Taken from <a href="http://www.mail-archive.com/javaposse@googlegroups.com/msg05984.html">JavaPosse</a></i>
+     * 
+     * <pre>
+     * </pre>
+     * 
      * Throws the given throwable. The caller can explicitly cast his (caught) exception to a {@link RuntimeException} by using target typing.
      * Example:
      * 
@@ -61,7 +66,7 @@ public interface LambdaUtil {
      * @param t the throwable
      * @return nothing, because t is always thrown
      * @throws T always throws the passed throwable
-     * @see <a href="http://www.mail-archive.com/javaposse@googlegroups.com/msg05984.html">link</a>
+     * @see <a href="http://www.mail-archive.com/javaposse@googlegroups.com/msg05984.html">JavaPosse</a>
      */
     @SuppressWarnings("unchecked")
     static <T extends Throwable> T sneakyThrow(Throwable t) throws T {
