@@ -1,0 +1,7 @@
+org.gradle.daemon=true
+beosign_maven_base_url=http://localhost:8081/artifactory
+beosign_maven_url=http://localhost:8081/artifactory/libs-release-local
+beosign_maven_ext_url=http://localhost:8081/artifactory/ext-release-local
+beosign_maven_snapshot_url=http://localhost:8081/artifactory/libs-snapshot-local
+beosign_maven_user=user
+beosign_maven_password=password

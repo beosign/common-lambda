@@ -1,0 +1,76 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+// Workaround: Gradle always uses default JRE container
+eclipse {
+    classpath {
+         containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+         containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from javadoc.destinationDir
+    classifier = 'javadoc'
+}
+
+sourceCompatibility=1.8
+project.group="de.beosign.common"
+project.version="0.0.1"
+
+jar {
+    baseName = 'beosign-common-lamdba'
+}
+
+
+repositories {
+ 	maven {
+        credentials {
+            username "${beosign_maven_user}"
+            password "${beosign_maven_password}"
+        }
+        url "${beosign_maven_ext_url}"
+    }
+ 	maven {
+        credentials {
+            username "${beosign_maven_user}"
+            password "${beosign_maven_password}"
+        }
+        url "${beosign_maven_url}"
+    }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+//    compile('javax.servlet:javax.servlet-api:3.0.1')
+//    compile('com.sun.mail:javax.mail:1.5.+')
+    
+    testCompile("junit:junit:4+")
+}
+
+configurations {
+    deployerJars
+}
+
+artifacts {
+	archives jar
+    archives sourcesJar
+    archives javadocJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "${beosign_maven_base_url}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshot' : 'release' }-local") {
+            	 authentication(userName: beosign_maven_user, password: beosign_maven_password)
+            }
+        }
+    }
+}
