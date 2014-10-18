@@ -30,12 +30,9 @@ public interface LambdaUtil {
 
     /**
      * <i>Taken from <a href="http://www.mail-archive.com/javaposse@googlegroups.com/msg05984.html">JavaPosse</a></i>
-     * 
-     * <pre>
-     * </pre>
-     * 
-     * Throws the given throwable. The caller can explicitly cast his (caught) exception to a {@link RuntimeException} by using target typing.
-     * Example:
+     * <p>
+     * Throws the given throwable. The caller can explicitly cast his (caught) exception to a {@link RuntimeException} by using target typing. Example:
+     * </p>
      * 
      * <pre>
      * public interface ConsumerCheckException&lt;T&gt;{
