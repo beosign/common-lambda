@@ -13,5 +13,4 @@ Features
     </code>
     
 *   **Processors for parallel work**<br/>
-	During the execution of lambdas exceptions may occur which cause the execution to stop. However, maybe one just wants to continue processing the next item, storing the caught exceptions and using them later. 
-	`AbstractWorkProcessor` and `DefaultWorkProcessor` can be used in this scenario.
+During the execution of lambdas exceptions may occur which cause the execution to stop. However, maybe one just wants to continue processing the next item, storing the caught exceptions and using them later. `AbstractWorkProcessor` and `DefaultWorkProcessor` can be used in this scenario.
