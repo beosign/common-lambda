@@ -11,9 +11,6 @@ import java.util.function.Consumer;
  */
 public interface CheckedExceptionConsumer<T, E extends Exception> extends CheckedConsumer<T> {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     void acceptWithException(T t) throws E;
 }

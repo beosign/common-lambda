@@ -11,9 +11,6 @@ package de.beosign.common.lambda.function;
 @FunctionalInterface
 public interface CheckedExceptionFunction<T, R, E extends Exception> extends CheckedFunction<T, R> {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     R applyWithException(T t) throws E;
 

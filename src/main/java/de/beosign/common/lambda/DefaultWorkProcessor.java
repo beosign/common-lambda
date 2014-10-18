@@ -32,9 +32,6 @@ public class DefaultWorkProcessor<T, R> extends AbstractWorkProcessor<T, R> {
         this((Function<T, R>) processor);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected R doProcess(T item) throws Exception {
         return processor.apply(item);
