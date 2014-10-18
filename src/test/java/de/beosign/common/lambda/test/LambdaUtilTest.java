@@ -11,6 +11,9 @@ import de.beosign.common.lambda.function.CheckedConsumer;
 
 public class LambdaUtilTest {
 
+    /**
+     * Tests the transform method.
+     */
     @Test
     public void transformTestDefault() {
         List<String> strings = new ArrayList<String>();
@@ -23,6 +26,9 @@ public class LambdaUtilTest {
         Assert.assertEquals(res.get(1), new Integer(2));
     }
 
+    /**
+     * Tests that the transform method can handle a null parameter.
+     */
     @Test
     public void transformTestNull() {
         List<String> strings = null;
@@ -32,9 +38,11 @@ public class LambdaUtilTest {
 
     }
 
+    /**
+     * Test that we can actually rethrow an Exception without requiring this method to declare it.
+     */
     @Test(expected = Exception.class)
     public void testSneakyThrowException() {
-        // Test that we can actually rethrow an Exception without requiring this method to declare it
         CheckedConsumer<String> cce = new CheckedExceptionConsumerAlwaysThrower();
 
         try {

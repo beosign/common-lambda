@@ -8,8 +8,16 @@ import org.junit.Test;
 
 import de.beosign.common.lambda.AbstractWorkProcessor;
 
+/**
+ * Tests against the {@link AbstractWorkProcessor}.
+ * 
+ * @author Florian Dahlmanns
+ */
 public class AbstractWorkProcessorTest {
 
+    /**
+     * Verifies the result and exceptions map.
+     */
     @Test
     public void testResultsAndExceptions() {
         List<String> strings = new ArrayList<String>();
@@ -39,6 +47,11 @@ public class AbstractWorkProcessorTest {
 
     }
 
+    /**
+     * A simple string processor that returns the first 3 letters.
+     * 
+     * @author Florian Dahlmanns
+     */
     private static class StringWorkProcessor extends AbstractWorkProcessor<String, String> {
 
         @Override

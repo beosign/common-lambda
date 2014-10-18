@@ -10,10 +10,18 @@ import org.junit.Test;
 
 import de.beosign.common.lambda.DefaultWorkProcessor;
 
+/**
+ * Tests against the {@link DefaultWorkProcessor}.
+ * 
+ * @author Florian Dahlmanns
+ */
 public class DefaultWorkProcessorTest {
 
     private List<String> strings = new ArrayList<String>();
 
+    /**
+     * Reinits list.
+     */
     @Before
     public void initList() {
         strings.clear();
@@ -24,6 +32,9 @@ public class DefaultWorkProcessorTest {
         strings.add("4444");
     }
 
+    /**
+     * Test the processor in case there are no exceptions.
+     */
     @Test
     public void testNoException() {
         DefaultWorkProcessor<String, Integer> wp = new DefaultWorkProcessor<>(s -> s.length());
@@ -35,6 +46,9 @@ public class DefaultWorkProcessorTest {
         }
     }
 
+    /**
+     * Test the processor when there is a {@link RuntimeException}.
+     */
     @Test
     public void testRuntimeException() {
         DefaultWorkProcessor<String, Integer> wp = new DefaultWorkProcessor<>(s -> {
@@ -57,6 +71,9 @@ public class DefaultWorkProcessorTest {
 
     }
 
+    /**
+     * Test the processor when there is a checked {@link Exception}.
+     */
     @Test
     public void testCheckedException() {
         DefaultWorkProcessor<String, Integer> wp = new DefaultWorkProcessor<>(s -> {
