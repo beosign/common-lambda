@@ -9,6 +9,11 @@ import org.junit.Test;
 import de.beosign.common.lambda.LambdaUtil;
 import de.beosign.common.lambda.function.CheckedConsumer;
 
+/**
+ * Tests for {@link LambdaUtil} class.
+ * 
+ * @author Florian Dahlmanns
+ */
 public class LambdaUtilTest {
 
     /**

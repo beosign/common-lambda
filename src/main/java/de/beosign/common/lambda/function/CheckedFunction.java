@@ -31,7 +31,7 @@ public interface CheckedFunction<T, R> extends Function<T, R> {
      * @param f the {@link CheckedFunction}
      * @return the converted {@link Function}
      */
-    public static <T, R> Function<T, R> convert(CheckedFunction<T, R> f) {
+    static <T, R> Function<T, R> convert(CheckedFunction<T, R> f) {
         return elem -> f.apply(elem);
     }
 

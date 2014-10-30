@@ -47,9 +47,9 @@ public interface LambdaUtil {
      *          } catch (Exception ex) {
      * 
      * 
-     *          within sneakyThrow() we cast to the parameterized type T. 
-     *          In this case that type is RuntimeException. 
-     *          At runtime, however, the generic types have been erased, so 
+     *          within sneakyThrow() we cast to the parameterized type T.
+     *          In this case that type is RuntimeException.
+     *          At runtime, however, the generic types have been erased, s
      *          that there is no T type anymore to cast to, so the cast
      *          disappears.
      * 

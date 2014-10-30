@@ -1,9 +1,8 @@
 package de.beosign.common.lambda.function;
 
-import java.util.function.Consumer;
 
 /**
- * A {@link Consumer} that may throw a specific exception.
+ * A {@link java.util.cunction.Consumer} that may throw a specific exception.
  * 
  * @author florian
  * @param <T> input type

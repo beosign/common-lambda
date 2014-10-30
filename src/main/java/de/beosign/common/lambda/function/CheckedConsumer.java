@@ -28,7 +28,7 @@ public interface CheckedConsumer<T> extends Consumer<T> {
      * @param c checked consumer
      * @return normal consumer
      */
-    public static <T> Consumer<T> convert(CheckedConsumer<T> c) {
+    static <T> Consumer<T> convert(CheckedConsumer<T> c) {
         return t -> c.accept(t);
     }
 
