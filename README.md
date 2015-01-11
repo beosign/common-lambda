@@ -7,8 +7,8 @@ Features
 --------
 *   **Checked variants of Consumer and Function**<br/>
     When using lambdas, checked exceptions cannot be used easily. Using a small wrapper, this becomes possible:<br/>
-    <code> 
-    List<String> strings = Arrays.asList("Hello", "World", "Test");
+    <code>
+    List&lt;String> strings = Arrays.asList("Hello", "World", "Test");
     strings.stream().map(CheckedFunction.convert(s -> new FileInputStream(s)));
     </code>
     
